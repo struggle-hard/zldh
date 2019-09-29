@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xue.dao.MessageRepository">
+    <resultMap id="MessageMap" type="com.xue.pojo.Message">
+        <result column="id" property="id"></result>
+        <result column="username" property="username" jdbcType="VARCHAR"></result>
+        <result column="phone" property="phone" jdbcType="VARCHAR"></result>
+        <result column="content" property="content" jdbcType="VARCHAR"></result>
+    </resultMap>
+<insert id="save" parameterType="com.xue.pojo.Message">
+  INSERT INTO message
+  <set>
+      <if test="username != null">
+        username=#{username,jdbcType=VARCHAR}
+      </if>
+      <if test="phone != null">
+          phone=#{phone,jdbcType=VARCHAR}
+      </if>
+      <if test="content != null">
+          content=#{content,jdbcType=VARCHAR}
+      </if>
+  </set>
+</insert>
+    <select id="getAll" resultMap="MessageMap">
+        SELECT * FROM message
+        <where>
+            <if test="phone !=null">
+                phone=#{phone,jdbcType=VARCHAR}
+            </if>
+            <if test="username !=null">
+               AND username=#{username,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+</mapper>

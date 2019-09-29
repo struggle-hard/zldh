@@ -1,0 +1,164 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" class="no-js h-100" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shards Dashboard Lite - Free Bootstrap Admin Template – DesignRevision</title>
+    <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" th:href="@{/styles/shards-dashboards.1.1.0.min.css}">
+    <link rel="stylesheet" th:href="@{/styles/extras.1.1.0.min.css}">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+  <body class="h-100">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Main Sidebar -->
+        <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
+          <div class="main-navbar">
+            <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
+              <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
+                <div class="d-table m-auto">
+                  <!--<img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="images/shards-dashboards-logo.svg" alt="Shards Dashboard">-->
+                  <span class="d-none d-md-inline ml-1">网站后台管理</span>
+                </div>
+              </a>
+              <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
+                <i class="material-icons">&#xE5C4;</i>
+              </a>
+            </nav>
+          </div>
+          <div class="nav-wrapper">
+            <div class="nav-wrapper">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link " href="/admin/bannerupload">
+                    <i class="material-icons">view_module</i>
+                    <span>轮播图替换</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="/message/list">
+                    <i class="material-icons">table_chart</i>
+                    <span>留言查看</span>
+                  </a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/admin/personView">
+                  <i class="material-icons">person</i>
+                  <span>更改密码</span>
+                </a>
+              </li>
+              <!--<li class="nav-item">
+                <a class="nav-link " href="errors.html">
+                  <i class="material-icons">error</i>
+                  <span>Errors</span>
+                </a>
+              </li>-->
+            </ul>
+          </div>
+          </div>
+        </aside>
+        <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
+          <div class="main-navbar sticky-top bg-white">
+            <!-- Main Navbar -->
+            <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+              <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+              </form>
+              <ul class="navbar-nav border-left flex-row ">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img class="user-avatar rounded-circle mr-2" src="https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.jpg" alt="">
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-small">
+                    <a class="dropdown-item" href="/admin/personView">
+                      <i class="material-icons">&#xE7FD;</i> 修改密码</a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="/admin/login">
+                      <i class="material-icons text-danger">&#xE879;</i> 退出登录 </a>
+                  </div>
+                </li>
+              </ul>
+              <nav class="nav">
+                <a href="#" class="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
+                  <i class="material-icons">&#xE5D2;</i>
+                </a>
+              </nav>
+            </nav>
+          </div>
+          <!-- / .main-navbar -->
+          <div class="alert alert-success alert-dismissible fade show mb-0 bg-white" role="alert" >
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            </button>
+          <div class="main-content-container container-fluid px-4">
+            <!-- End Page Header -->
+            <!-- Default Light Table -->
+            <div class="row">
+
+              <div class="col-lg-8">
+                <div class="card card-small mb-4">
+                  <div class="card-header border-bottom">
+                    <h6 class="m-0">修改密码</h6>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-3">
+                      <div class="row">
+                        <div class="col">
+                          <form  th:action="@{/info/updatePassword}" th:method="post" th:object="${adminInfo}">
+                            <div class="form-row">
+                              <div class="form-group col-md-6 ">
+                                <label for="oldPassword" style="color: cornflowerblue">旧密码</label>
+                                <input type="text" class="form-control" id="oldPassword" placeholder="oldPassword" name="oldPassword"> </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="newPassword" style="color: cornflowerblue">新密码</label>
+                                <input type="text" class="form-control" id="newPassword" placeholder="newPassword" name="newPassword"> </div>
+                            </div>
+                            <button type="submit" class="btn btn-accent">保存</button>
+                          </form>
+                        </div>
+                        <span id="updateResult" th:text="${hintMessage}" th:hidden="true"></span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- End Default Light Table -->
+          </div>
+          </div>
+
+        </main>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="scripts/extras.1.1.0.min.js"></script>
+    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
+    <script>
+
+      //当用户启用预折活动时，也应该验证是否有重复的预折活动
+      $(function(){
+        var updateResult = document.getElementById("updateResult").innerText;
+        // /*[[@{/admin}]]*/"/admin/login";/*]]>*/
+        /*<![CDATA[*/var loginhref= "http://localhost:8080/admin/login";/*]]>*/
+        console.log(updateResult);
+        if(updateResult=="修改成功！"){
+          alert(updateResult);
+          window.location.href="http://localhost:8080/admin/login";
+        }else {
+          alert(updateResult);
+        }
+      });
+    </script>
+  </body>
+</html>

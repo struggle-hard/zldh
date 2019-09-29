@@ -1,0 +1,63 @@
+/* --Line-- */
+hr {height: 3px;width: 70px;position: relative;background: #c8a16c; border: 0;margin-bottom: 30px;}
+
+#page-content{}
+#page-content.index-page {}
+
+/* ---HomePage--- */
+.box-content,
+article {padding: 100px 0;}
+.heading{padding: 20px 0 30px;}
+.heading h2{font-weight: 400;margin-bottom: 26px;}
+
+.box-content.box-style {}
+.box-content.box-style{padding: 80px 0;background: #FFF;}
+.box-content.box-style i.fa {font-size: 30px;padding: 5px;color: #f1c40f;}
+.box-content.box-style hr {background: #a9971c;}
+
+.categories {padding-bottom: 60px;text-align: center;}
+.categories-li-span{
+	font-size: 25px;
+	font-family: "arial black";
+}
+
+ul.cat{margin: 0;padding: 0;}
+ul.cat li {display: inline-block;}
+ol.type li {margin: 10px 0 10px 20px;}
+ol.type li:first-child {margin-left: 0;}
+ol.type li a {color: #333333; padding: 8px 16px;}
+ol.type li a.active {color: #c8a16c;}
+ol.type li a:hover {color: #c8a16c;}
+
+.isotope-item {z-index: 2}
+.isotope-hidden.isotope-item {z-index: 1}
+.isotope, .isotope .isotope-item {-webkit-transition-duration: 0.8s;-moz-transition-duration: 0.8s;transition-duration: 0.8s;}
+.isotope-item {margin-right: -1px;-webkit-backface-visibility: hidden;backface-visibility: hidden;}
+.isotope {-webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-transition-property: height, width;-moz-transition-property: height, width;transition-property: height, width;}
+.isotope .isotope-item {-webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-transition-property: -webkit-transform, opacity;-moz-transition-property: -moz-transform, opacity;transition-property: transform, opacity;}
+
+
+.hover-bg .hover-text {position: absolute;text-align: center;margin: 0 auto;color: #c0cbce;background: rgba(3, 46, 58, 0.8);padding: 25% 0;height: 100%;width: 100%;opacity: 0;transition: all 0.5s;}
+.hover-bg .hover-text>h4 {opacity: 0;-webkit-transform: translateY(100%);transform: translateY(100%);transition: all 0.3s;font-size: 20px;}
+.hover-bg:hover .hover-text>h4 {opacity: 1;-webkit-backface-visibility: hidden;-webkit-transform: translateY(0);transform: translateY(0);}
+.hover-bg .hover-text>i {opacity: 0;-webkit-transform: translateY(0);transform: translateY(0);transition: all 0.3s;}
+.hover-bg:hover .hover-text>i {opacity: 1;-webkit-backface-visibility: hidden;-webkit-transform: translateY(100%);transform: translateY(100%);}
+.hover-bg:hover .hover-text {opacity: 1;}
+.portfolio-modal .modal-content {padding: 100px 0;min-height: 100%;border: 0;border-radius: 0;text-align: center;background-clip: border-box;-webkit-box-shadow: none;box-shadow: none;background: #f1c40f;}
+.portfolio-item {margin-bottom: 30px;}
+.portfolio-item .hover-bg {height: 260px;overflow: hidden;position: relative;}
+.portfolio-modal .modal-content h2 {margin-bottom: 15px;font-size: 2.5em;}
+.portfolio-modal .modal-content p {margin-bottom: 30px;}
+.portfolio-modal .modal-content p.item-intro {margin: 10px 0 30px;font-size: 14px;font-style: italic;}
+.portfolio-modal .modal-content ul.list-inline {margin-top: 0;margin-bottom: 30px;}
+.portfolio-modal .modal-content img {margin-bottom: 30px;}
+.portfolio-modal .close-modal {position: absolute;top: 25px;right: 25px;width: 75px;height: 75px;background-color: transparent;cursor: pointer;}
+.portfolio-modal .close-modal:hover {opacity: .3;}
+.portfolio-modal .close-modal .lr {z-index: 1051;width: 1px;height: 75px;margin-left: 35px;background-color: #222;-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);}
+.portfolio-modal .close-modal .lr .rl {z-index: 1052;width: 1px;height: 75px;background-color: #222;-webkit-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);}
+.portfolio-modal .btn-primary {color: #a7b6ba;background-color: #1d434e;border-color: #1d434e;}
+.portfolio-modal .btn-primary:hover, 
+.portfolio-modal .btn-primary:focus, 
+.portfolio-modal .btn-primary.focus, 
+.portfolio-modal .btn-primary:active, 
+.portfolio-modal .btn-primary.active {color: #a7b6ba;background-color: #032e3a;border-color: #032e3a;}

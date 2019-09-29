@@ -1,0 +1,11 @@
+#######################【开发环境配置】###################################
+#数据库配置
+jdbc:
+   #是否打印sql,true 或false
+   show-sql: true
+   ip: localhost
+   port: 3306
+   dbname: estate
+   username: root
+   password: root123456
+

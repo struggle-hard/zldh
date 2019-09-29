@@ -1,0 +1,204 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" class="no-js h-100" lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shards Dashboard Lite - Free Bootstrap Admin Template – DesignRevision</title>
+    <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" th:href="@{/styles/shards-dashboards.1.1.0.min.css}">
+    <link rel="stylesheet" th:href="@{/styles/extras.1.1.0.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/webupload/webuploader.css}">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+  <body class="h-100">
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Main Sidebar -->
+        <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
+          <div class="main-navbar">
+            <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
+              <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
+                <div class="d-table m-auto">
+                  <!--<img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="images/shards-dashboards-logo.svg" alt="Shards Dashboard">-->
+                  <span class="d-none d-md-inline ml-1">网站后台管理</span>
+                </div>
+              </a>
+              <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
+                <i class="material-icons">&#xE5C4;</i>
+              </a>
+            </nav>
+          </div>
+          <div class="nav-wrapper">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link " href="/admin/bannerupload">
+                  <i class="material-icons">view_module</i>
+                  <span>轮播图替换</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/message/list">
+                  <i class="material-icons">table_chart</i>
+                  <span>留言查看</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/admin/personView">
+                  <i class="material-icons">person</i>
+                  <span>更改密码</span>
+                </a>
+              </li>
+              <!--<li class="nav-item">
+                <a class="nav-link " href="errors.html">
+                  <i class="material-icons">error</i>
+                  <span>Errors</span>
+                </a>
+              </li>-->
+            </ul>
+          </div>
+        </aside>
+        <!-- End Main Sidebar -->
+        <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
+          <div class="main-navbar sticky-top bg-white">
+            <!-- Main Navbar -->
+            <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+              <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+              </form>
+              <ul class="navbar-nav border-left flex-row ">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img class="user-avatar rounded-circle mr-2" src="https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.jpg" alt="">
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-small">
+                    <a class="dropdown-item" href="/admin/personView">
+                      <i class="material-icons">&#xE7FD;</i> 修改密码</a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="/admin/login">
+                      <i class="material-icons text-danger">&#xE879;</i> 退出登录 </a>
+                  </div>
+                </li>
+              </ul>
+              <nav class="nav">
+                <a href="#" class="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
+                  <i class="material-icons">&#xE5D2;</i>
+                </a>
+              </nav>
+            </nav>
+          </div>
+          <div class="page-header row no-gutters py-4">
+            <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+              <span class="text-uppercase page-subtitle"></span>
+              <h3 class="page-title"></h3>
+            </div>
+          </div>
+          <div class="card-body p-0 pb-3 text-center">
+          <table class="table mb-0">
+            <thead class="bg-light">
+            <tr>
+              <th scope="col" class="border-0">轮播图名称</th>
+              <th scope="col" class="border-0">图片名</th>
+              <th scope="col" class="border-0">选择图片</th>
+              <th scope="col" class="border-0">上传</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                <select class="selected" id="bannerselect">
+                  <option value="banner1">轮播图一</option>
+                  <option value="banner2">轮播图二</option>
+                  <option value="banner3">轮播图三</option>
+                </select>
+              </td>
+
+              <td>
+                <div id="thelist" class="uploader-list">
+                </div>
+              </td>
+
+              <td>
+                <div id="uploader" class="wu-example">
+                  <!--用来存放文件信息-->
+                  <div class="btns">
+                    <div id="picker">选择图片</div>
+                  </div>
+                </div>
+              </td>
+              <td><button id="ctlBtn" class="btn btn-danger">开始上传</button></td>
+            </tr>
+            </tbody>
+          </table>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script  th:src="@{/js/jquery-2.1.1.js}"></script>
+    <script  th:src="@{/webupload/webuploader.js}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="scripts/extras.1.1.0.min.js"></script>
+    <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
+   <!-- <script th:src="@{/scripts/extras.1.1.0.min.js}"></script>
+    <script th:src="@{/scripts/shards-dashboards.1.1.0.min.js}"></script>
+    <script th:src="@{/scripts/app/app-blog-overview.1.1.0.js}"></script>-->
+    <script>
+      var bannername = $("#bannerselect").val();
+      var uploader = WebUploader.create({
+        // swf文件路径
+        swf: '/webupload/Uploader.swf',
+        // 文件接收服务端。
+        server: '/upload/banners?bannername='+ bannername,
+
+        // 选择文件的按钮。可选。
+        // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+        pick: '#picker',
+
+        // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+        resize: false,
+
+        // 只允许选择图片文件。
+        accept: {
+          title: 'Images',
+          extensions: 'jpg',
+          mimeTypes: 'image/*'
+        }
+      });
+      var $list = $("#thelist");
+      uploader.on( 'fileQueued', function( file ) {
+        $list.append( '<div id="' + file.id + '" class="item">' +
+                 file.name +
+                '<p class="state">等待上传...</p>' +
+                '</div>' );
+      });
+
+      uploader.on( 'uploadSuccess', function( file, data ) {
+        $( '#'+file.id ).find('p.state').text(data.msg);
+      });
+      // 文件上传过程中创建进度条实时显示。
+      uploader.on( 'uploadProgress', function( file ) {
+        $( '#'+file.id ).find('p.state').text('上传中，请稍等...');
+      });
+      uploader.on( 'uploadError', function( file ) {
+        $( '#'+file.id ).find('p.state').text('上传出错');
+      });
+
+      uploader.on( 'uploadComplete', function( file ) {
+        $( '#'+file.id ).find('.progress').fadeOut();
+      });
+
+      $("#ctlBtn").on('click', function() {
+        uploader.upload();
+      });
+    </script>
+  </body>
+</html>

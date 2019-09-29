@@ -1,0 +1,11 @@
+#xuejianxinokok@163.com
+#配置大全https://blog.csdn.net/fxbin123/article/details/80359092
+#访问日志https://www.jianshu.com/p/3f3338d8387a
+##########################【spring 配置】################################
+spring:
+    #激活的profile
+    profiles:
+        active: dev
+        #包含通用的配置 spring.profiles.include: proddb,prodmq
+        include: common
+ 

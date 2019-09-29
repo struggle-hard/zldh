@@ -1,0 +1,61 @@
+##########################【spring 通用配置 by xuejianxinokok@163.com】################################
+jdbc:
+    url: ${jdbc.ip}:${jdbc.port}/${jdbc.dbname}?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8
+    #不打印sql
+    driver-class-name-show-sql-false: com.mysql.cj.jdbc.Driver
+    url-show-sql-false : jdbc:mysql://${jdbc.url}
+    #打印sql
+    driver-class-name-show-sql-true : com.p6spy.engine.spy.P6SpyDriver
+    url-show-sql-true : jdbc:p6spy:mysql://${jdbc.url}
+
+
+     
+    
+spring:
+  devtools:
+    restart:
+      enabled: true
+  freemarker:
+    cache: false
+  datasource:
+    driver-class-name: ${jdbc.driver-class-name-show-sql-${jdbc.show-sql}}
+    url  : ${jdbc.url-show-sql${jdbc.show-sql}}
+    username: ${jdbc.username}
+    password: ${jdbc.password}
+
+    
+    type: com.zaxxer.hikari.HikariDataSource
+    #线程池参数配置
+    hikari:
+        pool-name: hikariDataSourcePool
+        connection-test-query: SELECT 1
+        maximum-pool-size: 500
+        minimum-idle: 5
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    servlet:
+      content-type: text/html
+    cache: false
+    mode: LEGACYHTML5
+  main:
+    allow-bean-definition-overriding: true
+
+
+#######################【myabtis配置】##################################      
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.xue.pojo
+  
+#######################【分页插件配置】################################## 
+pagehelper:
+  helper-dialect: mysql 
+  auto-dialect: true 
+  page-size-zero: false 
+  reasonable: true
+
+
+logging:
+  level:
+    com.xue.dao.AdminDao: DEBUG
+
